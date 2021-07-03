@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "./comps/Header";
-import Home from "./comps/Home";
+import Home from "./Routes/Home";
 import Footer from "./comps/Footer";
-import About from "./comps/About";
-import Form from "./comps/Form";
+import About from "./Routes/About";
+import Form from "./Routes/Form";
 import { Flex, Spacer } from "@chakra-ui/react";
 
 function App() {
