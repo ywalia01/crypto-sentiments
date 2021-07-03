@@ -1,4 +1,5 @@
 # Crypto Sentiments
 
-client === React/Frontend
-gfg-sentiment === Flask/Python Backend
+## client === React/Frontend
+
+## gfg-sentiment === Flask/Python Backend
