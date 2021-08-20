@@ -16,6 +16,7 @@ import {
 import { AiOutlineInfoCircle } from "react-icons/ai";
 import { ArrowRightIcon } from "@chakra-ui/icons";
 import { ArrowLeftIcon } from "@chakra-ui/icons";
+import { Helmet } from "react-helmet";
 
 const Form = () => {
     const [recData, SetRecData] = useState("");
@@ -55,6 +56,9 @@ const Form = () => {
                     console.log(response.data);
                     setListings(response.data);
                 }
+                // else {
+                //     setListings()
+                // }
             } catch (err) {
                 console.log(err);
             }
@@ -124,14 +128,15 @@ const Form = () => {
                                     }}
                                 />
                             </NumberInput>
-                            <Tooltip
-                                hasArrow
-                                label="Top listed cryptos based on data from CoinMarketCap API"
-                                bg="gray.300"
-                                color="black"
-                            >
-                                <FormLabel mt={8}>
-                                    Choose Crypto
+
+                            <FormLabel mt={8}>
+                                Choose Crypto
+                                <Tooltip
+                                    hasArrow
+                                    label="Top listed cryptos based on data from CoinMarketCap API"
+                                    bg="gray.300"
+                                    color="black"
+                                >
                                     <span
                                         style={{
                                             marginLeft: "5px",
@@ -140,15 +145,14 @@ const Form = () => {
                                     >
                                         <Icon as={AiOutlineInfoCircle} />
                                     </span>
-                                </FormLabel>
-                            </Tooltip>
+                                </Tooltip>
+                            </FormLabel>
 
                             {listings.data && (
                                 <Select
                                     placeholder="eg. Bitcoin"
                                     value={choice}
                                     onChange={(e) => {
-                                        console.log(e);
                                         setChoice(e.target.value);
                                         console.log(choice);
                                     }}
@@ -211,6 +215,14 @@ const Form = () => {
                     >
                         Results from Analysis
                     </Heading>
+                    <Helmet>
+                        <title>Crypto Sentiments</title>
+                        <meta name="description" content=""></meta>
+                        <meta
+                            name="keywords"
+                            content="Ethereum, Bitcoin, Cryptocurrency"
+                        ></meta>
+                    </Helmet>
                     <Box
                         style={{
                             display: "flex",
@@ -224,13 +236,16 @@ const Form = () => {
                         </Text>
                         <Text fontSize="4xl">Choice: {recData.name}</Text>
                         <Text fontSize="4xl">
-                            Positive tweet %: {recData.postp}
+                            Positive tweet: {recData.postp}
+                            {" %"}
                         </Text>
                         <Text fontSize="4xl">
-                            Negative tweet %: {recData.negtp}
+                            Negative tweet: {recData.negtp}
+                            {" %"}
                         </Text>
                         <Text fontSize="4xl">
-                            Neutral tweet %: {recData.negtp}
+                            Neutral tweet: {recData.neutp}
+                            {" %"}
                         </Text>
                     </Box>
                     <Button

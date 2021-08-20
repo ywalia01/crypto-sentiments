@@ -6,9 +6,17 @@ const About = () => {
         <Flex maxW="50%" ml="auto" mr="auto" mb={20}>
             <Stack spacing={3}>
                 <Heading
+                    fontWeight="extrabold"
+                    size="2xl"
+                    bgGradient="linear(to-r, cyan.600, cyan.300, blue.500)"
+                    bgClip="text"
+                >
+                    About
+                </Heading>
+                <Heading
                     mb={3}
                     fontWeight="extrabold"
-                    size="xl"
+                    size="lg"
                     bgGradient="linear(to-r, cyan.600, cyan.300, blue.500)"
                     bgClip="text"
                 >
@@ -47,7 +55,7 @@ const About = () => {
                     mt={5}
                     mb={3}
                     fontWeight="extrabold"
-                    size="xl"
+                    size="lg"
                     bgGradient="linear(to-r, cyan.600, cyan.300, blue.500)"
                     bgClip="text"
                 >
